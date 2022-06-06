@@ -37,36 +37,36 @@ function HamburgerMenu({ setCheckMenu }) {
             onClick={() => handleThemain()}
             className=" hover:cursor-pointer hover:flex hover:items-center  "
           >
-            <p className=" font-bold text-2xl style ">The main</p>
+            <p className=" font-bold text-2xl text-white ">The main</p>
           </div>
           <div
             onClick={() => handleRentals()}
             className=" hover:cursor-pointer hover:flex hover:items-center  "
           >
-            <p className=" font-bold text-2xl style">Rentals</p>
+            <p className=" font-bold text-2xl text-white">Rentals</p>
           </div>
           <div
             onClick={() => handleAboutus()}
             className=" hover:cursor-pointer hover:flex hover:items-center  "
           >
-            <p className=" font-bold text-2xl style">About us</p>
+            <p className=" font-bold text-2xl text-white">About us</p>
           </div>
           <div
             onClick={() => handleEquipment()}
             className=" hover:cursor-pointer hover:flex hover:items-center  "
           >
-            <p className=" font-bold text-2xl style">Equipment</p>
+            <p className=" font-bold text-2xl text-white">Equipment</p>
           </div>
           <div
             onClick={() => handleValue()}
             className=" hover:cursor-pointer hover:flex hover:items-center  "
           >
-            <p className=" font-bold text-2xl style">Value</p>
+            <p className=" font-bold text-2xl text-white">Value</p>
           </div>
           <div className=" hover:cursor-pointer hover:flex hover:items-center  ">
             <p
               onClick={() => handleContact()}
-              className=" font-bold text-2xl style"
+              className=" font-bold text-2xl text-white"
             >
               Contact
             </p>

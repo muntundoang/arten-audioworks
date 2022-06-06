@@ -50,7 +50,7 @@ function Equipment() {
         <div className="flex justify-center items-center">
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-10 sm:text-base text-xs">
             <div className="space-y-6">
-              <div className="sm:w-[400px] sm:h-[300px] w-[200px] h-[100px] overflow-hidden  bg-neutral-500">
+              <div className="sm:w-[400px] sm:h-[300px] w-[200px] h-[100px] overflow-hidden  bg-neutral-500 rounded-xl">
                 <img className="sm:h-[300px] object-cover" src={A} alt="" />
               </div>
               <p className="font-title font-bold sm:w-[400px] w-[200px]">
@@ -59,7 +59,7 @@ function Equipment() {
               </p>
             </div>
             <div className="space-y-6">
-              <div className="sm:w-[400px] sm:h-[300px] w-[200px] h-[100px]  overflow-hidden bg-neutral-500">
+              <div className="sm:w-[400px] sm:h-[300px] w-[200px] h-[100px]  overflow-hidden bg-neutral-500 rounded-xl">
                 <img className="h-[350px] object-cover" src={B} alt="" />
               </div>
               <p className="font-title font-bold sm:w-[400px] w-[200px]">
@@ -68,7 +68,7 @@ function Equipment() {
               </p>
             </div>
             <div className="space-y-6">
-              <div className="sm:w-[400px] sm:h-[300px] w-[200px] h-[100px]  overflow-hidden bg-neutral-500">
+              <div className="sm:w-[400px] sm:h-[300px] w-[200px] h-[100px]  overflow-hidden bg-neutral-500 rounded-xl">
                 <img className="h-[400px] object-cover" src={C} alt="" />
               </div>
               <p className="font-title font-bold sm:w-[400px] w-[200px]">
@@ -77,7 +77,7 @@ function Equipment() {
               </p>
             </div>
             <div className="space-y-6">
-              <div className="sm:w-[400px] sm:h-[300px] w-[200px] h-[100px]  overflow-hidden bg-neutral-500">
+              <div className="sm:w-[400px] sm:h-[300px] w-[200px] h-[100px]  overflow-hidden bg-neutral-500 rounded-xl">
                 <img className="h-[400px] object-cover" src={D} alt="" />
               </div>
               <p className="font-title font-bold sm:w-[400px] w-[200px]">
@@ -86,7 +86,7 @@ function Equipment() {
               </p>
             </div>
             <div className="space-y-6">
-              <div className="sm:w-[400px] sm:h-[300px] w-[200px] h-[100px]  overflow-hidden bg-neutral-500">
+              <div className="sm:w-[400px] sm:h-[300px] w-[200px] h-[100px]  overflow-hidden bg-neutral-500 rounded-xl">
                 <img className="h-[350px] object-cover" src={E} alt="" />
               </div>
               <p className="font-title font-bold sm:w-[400px] w-[200px]">
@@ -95,7 +95,7 @@ function Equipment() {
               </p>
             </div>
             <div className="space-y-6">
-              <div className="sm:w-[400px] sm:h-[300px] w-[200px] h-[100px]  overflow-hidden bg-neutral-500">
+              <div className="sm:w-[400px] sm:h-[300px] w-[200px] h-[100px]  overflow-hidden bg-neutral-500 rounded-xl">
                 <img className="h-[500px] object-cover" src={F} alt="" />
               </div>
               <p className="font-title font-bold sm:w-[400px] w-[200px]">
@@ -104,7 +104,7 @@ function Equipment() {
               </p>
             </div>
             <div className="space-y-6">
-              <div className="sm:w-[400px] sm:h-[300px] w-[200px] h-[100px]  overflow-hidden bg-neutral-500">
+              <div className="sm:w-[400px] sm:h-[300px] w-[200px] h-[100px]  overflow-hidden bg-neutral-500 rounded-xl">
                 <img className="h-[320px] object-cover" src={G} alt="" />
               </div>
               <p className="font-title font-bold sm:w-[400px] w-[200px]">
@@ -113,7 +113,7 @@ function Equipment() {
               </p>
             </div>
             <div className="space-y-6">
-              <div className="sm:w-[400px] sm:h-[300px] w-[200px] h-[100px]  overflow-hidden bg-neutral-500">
+              <div className="sm:w-[400px] sm:h-[300px] w-[200px] h-[100px]  overflow-hidden bg-neutral-500 rounded-xl">
                 <img className="h-[480px] object-cover" src={H} alt="" />
               </div>
               <p className="font-title font-bold sm:w-[400px] w-[200px]">
@@ -122,7 +122,7 @@ function Equipment() {
               </p>
             </div>
             <div className="space-y-6">
-              <div className="sm:w-[400px] sm:h-[300px] w-[200px] h-[100px]  overflow-hidden bg-neutral-500">
+              <div className="sm:w-[400px] sm:h-[300px] w-[200px] h-[100px]  overflow-hidden bg-neutral-500 rounded-xl">
                 <img className="h-[300px] object-cover" src={I} alt="" />
               </div>
               <p className="font-title font-bold sm:w-[400px] w-[200px]">

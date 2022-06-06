@@ -35,9 +35,9 @@ function Value() {
           </div>
         </div>
         <div className="flex justify-center mt-14">
-          <div className="relative w-[300px] md:inline hidden">
+          <div className="relative w-[300px] md:inline hidden ">
             <img
-              className="absolute top-[-120px] w-[250px]"
+              className="absolute top-[-120px] w-[250px] rounded-lg"
               src={Operator}
               alt=""
             />

@@ -65,17 +65,18 @@ function Themain() {
           <div className=" lg:w-[250px] md:w-[200px] sm:inline hidden">
             <img className="" src={Mic} alt="" />
           </div>
-          <div className="w-[300px] lg:ml-28 md:ml-10">
+          <div className="w-[300px] lg:ml-28 md:ml-10 flex flex-col justify-center items-center">
             <p className="font-title text-white text-6xl font-bold relative tracking-widest">
               Recording Studio in Arten{" "}
-              <button
+              
+            </p>`
+            <button
                 onClick={() => navigate("/rentals")}
-                className="w-20 h-9 rounded-3xl bg-button text-base top-[135px] left-44 absolute font-bold"
+                className="flex justify-center items-center w-52 h-14 rounded-2xl bg-button text-4xl font-bold text-white "
               >
-                Book
-              </button>
-            </p>
-            <p className="text-neutral-600 w-32 mt-6 font-body text-xs">
+                Book Now
+              </button>`
+            <p className="text-neutral-600 w-32 font-body text-xs">
               We do not make cheaper - we do better
             </p>
           </div>
