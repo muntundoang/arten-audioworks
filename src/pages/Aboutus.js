@@ -16,7 +16,7 @@ function Aboutus() {
               className="flex items-center space-x-2 cursor-pointer"
             >
               <BiArrowBack size="40px" color="white" />
-              <p className="text-white font-body sm:inline hidden">Back</p>
+              <p className="text-white font-body ">Back</p>
             </div>
             <div className="font-title lg:h-14 lg:w-14 sm:h-10 sm:w-10 h-8 w-8 rounded-full bg-button flex justify-center items-center lg:text-xl sm:text-base text-xs text-white font-bold">
               REC

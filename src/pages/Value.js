@@ -16,7 +16,7 @@ function Value() {
               className="flex items-center space-x-2 cursor-pointer"
             >
               <BiArrowBack size="40px" color="white" />
-              <p className="text-white font-body sm:inline hidden">Back</p>
+              <p className="text-white font-body ">Back</p>
             </div>
             <p className="lg:w-[300px] sm:w-[200px] text-neutral-400 lg:text-sm text-xs font-body sm:inline hidden">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est
