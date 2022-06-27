@@ -1,8 +1,8 @@
 import React from "react";
 import Mic from "../img/condenser.png";
 import { AiFillYoutube, AiFillInstagram } from "react-icons/ai";
-import { BsTelegram, BsSpotify } from "react-icons/bs";
-import { FaSoundcloud, FaMusic } from "react-icons/fa";
+// import { BsTelegram, BsSpotify } from "react-icons/bs";
+// import { FaSoundcloud, FaMusic } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 function Themain() {
@@ -76,27 +76,28 @@ function Themain() {
               >
                 Book Now
               </button>`
-            <p className="text-neutral-600 w-32 font-body text-xs">
-              We do not make cheaper - we do better
-            </p>
           </div>
         </div>
         <div className="flex sm:justify-between sm:items-end sm:flex-row justify-end items-center sm:space-y-0 space-y-6 flex-col w-full h-full mb-4 text-white font-title text-sm">
           <div className="flex space-x-10">
             <div className="flex flex-col items-center">
-              <AiFillYoutube size="30px" />
+              <a href="https://www.youtube.com/channel/UCeBxgt4kNAqLrtaEG9XYJLg" target="_blank" rel="noopener noreferrer">
+              <AiFillYoutube size="30px"/>
+              </a>
               <p>Youtube</p>
             </div>
-            <div className="flex flex-col items-center">
+            {/* <div className="flex flex-col items-center">
               <BsTelegram size="30px" />
               <p>Telegram</p>
-            </div>
+            </div> */}
             <div className="flex flex-col items-center">
+            <a href="https://www.instagram.com/arten.audioworks" target="_blank" rel="noopener noreferrer">
               <AiFillInstagram size="30px" />
+            </a>
               <p>Instagram</p>
             </div>
           </div>
-          <div className="flex space-x-10">
+          {/* <div className="flex space-x-10">
             <div className="flex flex-col items-center">
               <BsSpotify size="30px" />
               <p>Spotify</p>
@@ -109,7 +110,7 @@ function Themain() {
               <FaSoundcloud size="30px" />
               <p>SoundCloud</p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

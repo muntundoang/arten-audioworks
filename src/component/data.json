@@ -1,24 +1,9 @@
 {
     "data" : [
         {
-            "title" : "Rent for 24h",
+            "title" : "1 Shift Recording Studio - 6 Hours",
             "desc" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis tenetur ratione sunt aliquid, repellendus quo?",
-            "price" : "Price 649 USD"
-        },
-        {
-            "title" : "Rent per day - 14h",
-            "desc" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis tenetur ratione sunt aliquid, repellendus quo?",
-            "price" : "Price 769 USD"
-        },
-        {
-            "title" : "Rent at night - 14h",
-            "desc" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis tenetur ratione sunt aliquid, repellendus quo?",
-            "price" : "Price 1149 USD"
-        },
-        {
-            "title" : "Rent a project (two jobs) - 24h",
-            "desc" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis tenetur ratione sunt aliquid, repellendus quo?",
-            "price" : "Price 1179 USD"
+            "price" : "Rp. 500.000"
         }
     ]
 }

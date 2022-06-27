@@ -40,7 +40,7 @@ function Rentals() {
               </p>
               <p className="text-white font-bold">{list.price}</p>
               <button className="sm:w-20 sm:h-9 w-12 h-6 rounded-3xl bg-button text-white font-bold">
-                order
+                Book
               </button>
             </div>
           ))}
