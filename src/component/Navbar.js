@@ -2,20 +2,19 @@ import React, { useState } from "react";
 import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
 import { useNavigate } from "react-router-dom";
 import HamburgerMenu from "./HamburgerMenu";
+import artenLogo from "../img/ARTEN-LOGO-V2-1W.png";
 
 function Navbar() {
   const navigate = useNavigate();
   const [checkMenu, setCheckMenu] = useState(false);
 
   return (
-    <div className="h-16 w-screen bg-primary flex justify-center shadow-xl">
+    <div className="h-[100px] w-screen bg-primary flex justify-center shadow-xl">
       <div className="h-16 lg:w-[1000px] sm:w-[700px] w-[400px] flex  justify-between items-center relative ">
         <div
-          onClick={() => navigate("/")}
-          className="hover:cursor-pointer font-title text-white h-10 w-36 rounded-2xl bg-button flex justify-center items-center"
+          className="mt-9 h-[80px] w-32 flex justify-center"
         >
-          <p className="font-extralight">Arten &nbsp;</p>
-          <p className="font-bold">Audioworks</p>
+          <img className="w-[150px] object-contain hover:cursor-pointer" alt="arten-logo" src={artenLogo} onClick={() => navigate("/")}></img>
         </div>
         <div
           onClick={() => setCheckMenu(!checkMenu)}
