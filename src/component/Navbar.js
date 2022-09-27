@@ -10,7 +10,7 @@ function Navbar() {
 
   return (
     <div className="h-[100px] w-screen bg-primary flex justify-center shadow-xl">
-      <div className="h-16 lg:w-[1000px] sm:w-[700px] w-[400px] flex  justify-between items-center relative ">
+      <div className="h-16 lg:w-[1200px] sm:w-[700px] w-[400px] flex  justify-between items-center relative ">
         <div
           className="mt-9 h-[80px] w-32 flex justify-center"
         >

@@ -7,6 +7,7 @@ import Aboutus from './pages/Aboutus';
 import Value from './pages/Value';
 import Contact from './pages/Contact';
 import Equipment from './pages/Equipment';
+import LoginForm from './pages/loginRegisterFrom';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         <Route path="/equipment" element={<Equipment />} />
         <Route path="/value" element={<Value />} />
         <Route path="/contact" element={<Contact />} />
-      </Routes>
+        <Route path="/login" element={<LoginForm />} /> 
+        </Routes>
     </div>
     
   );

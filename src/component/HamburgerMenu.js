@@ -28,6 +28,10 @@ function HamburgerMenu({ setCheckMenu }) {
     setCheckMenu(false);
     navigate("/contact");
   };
+  const handleLoginForm = () => {
+    setCheckMenu(false);
+    navigate("/login");
+  };
 
   return (
     <div className="z-20 flex flex-col justify-center items-center absolute sm:h-[120px] h-[350px] w-32 right-0 top-14 bg-button  rounded-lg">
@@ -73,7 +77,7 @@ function HamburgerMenu({ setCheckMenu }) {
           </div>
         </div>
       </div>
-      <button className="h-10 w-20 rounded-lg text-primary bg-white mb-4">
+      <button onClick={() => handleLoginForm()} className="h-10 w-20 rounded-lg text-primary bg-white mb-4">
         LOG IN
       </button>
       <button className="h-10 w-20 rounded-lg text-white bg-primary">
