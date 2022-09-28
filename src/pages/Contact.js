@@ -103,6 +103,7 @@ function Contact() {
               soluta.
             </p>
             <iframe
+              title="google maps"
               className="mt-6 lg:w-[300px] lg:h-[200px] sm:w-[250px] sm:h-[200px]"
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15844.49103877024!2d107.5752112!3d-6.8758923!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2a235ae645191899!2sArten%20Audioworks!5e0!3m2!1sid!2sid!4v1654272152498!5m2!1sid!2sid"
             ></iframe>

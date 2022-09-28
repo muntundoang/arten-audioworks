@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
+const {userLogin} = require("../axios/index")
 
 const move = keyframes`
 0%{
@@ -237,7 +238,36 @@ const Text = styled.div`
 
 function LoginForm() {
   const [click, setClick] = useState(false);
+  const [password, setPassword] = useState();
+  const [email, setEmail] = useState();
   const handleClick = () => setClick(!click);
+
+  const emailOnChange = (e) => {
+    e.preventDefault();
+    setEmail(e.target.value);
+  };
+
+  const passOnChange = (e) => {
+    e.preventDefault();
+    setPassword(e.target.value);
+  };
+
+  const loginButtonHandler = async (e) => {
+    try {
+      e.preventDefault();
+      const response = await userLogin(email, password);
+      const access_token = response.data.access_token
+      if (access_token) {
+        localStorage.setItem("access_token", access_token);
+        console.log("sukses login");
+      } else {
+        console.log("gagal login");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       {" "}
@@ -246,15 +276,32 @@ function LoginForm() {
 
         <Form className="signin">
           <Title>Sign In</Title>
-          <Input type="email" name="email" id="emailId" placeholder="Email" />
           <Input
+            onChange={(e) => {
+              emailOnChange(e);
+            }}
+            type="email"
+            name="email"
+            id="emailId"
+            placeholder="Email"
+          />
+          <Input
+            onChange={(e) => {
+              passOnChange(e);
+            }}
             type="password"
             name="password"
             id="passwordId"
             placeholder="Password"
           />
           <Link href="#">Forgot Your Password?</Link>
-          <Button>Sign In</Button>
+          <Button
+            onClick={(e) => {
+              loginButtonHandler(e);
+            }}
+          >
+            Sign In
+          </Button>
         </Form>
 
         <Form className="signup">
