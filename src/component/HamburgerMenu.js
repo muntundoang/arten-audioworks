@@ -34,7 +34,7 @@ function HamburgerMenu({ setCheckMenu }) {
   };
 
   return (
-    <div className="z-20 flex flex-col justify-center items-center absolute sm:h-[120px] h-[350px] w-32 right-0 top-14 bg-button  rounded-lg">
+    <div className="z-20 flex flex-col justify-center items-center absolute sm:h-[120px] h-[350px] w-32 right-16  top-14 bg-button  rounded-lg">
       <div>
         <div className=" font-title sm:hidden sm:mt-0 mb-4">
           <div

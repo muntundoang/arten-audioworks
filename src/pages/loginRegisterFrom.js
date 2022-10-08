@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useGoogleLogin, hasGrantedAllScopesGoogle} from "@react-oauth/google";
 import styled, { keyframes } from "styled-components";
-const {userLogin} = require("../axios/index")
+const { userLogin, oAuthLogin } = require("../axios/index");
+
 
 const move = keyframes`
 0%{
@@ -240,6 +242,7 @@ function LoginForm() {
   const [click, setClick] = useState(false);
   const [password, setPassword] = useState();
   const [email, setEmail] = useState();
+  const [googleAuth, setGoogleAuth] = useState();
   const handleClick = () => setClick(!click);
 
   const emailOnChange = (e) => {
@@ -267,6 +270,33 @@ function LoginForm() {
       console.log(error);
     }
   };
+
+  const login = useGoogleLogin({
+    onSuccess: codeResponse => setGoogleAuth(codeResponse.code),
+    onError: () => console.log("error"),
+    flow: 'auth-code',
+    scope: "email profile https://www.googleapis.com/auth/calendar openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email",
+  });
+
+  const googleLogin = (e) => {
+    e.preventDefault()
+    console.log('masuk google login')
+    login()
+    console.log("userinfo", googleAuth)
+    const token = oAuthLogin(googleAuth)
+    console.log('token', token.data)
+    // const hasAccess = hasGrantedAllScopesGoogle(
+    //   googleAuth,
+    //   'email',
+    //   'profile',
+    //   'https://www.googleapis.com/auth/calendar',
+    //   'openid',
+    //   'https://www.googleapis.com/auth/userinfo.profile',
+    //   'https://www.googleapis.com/auth/userinfo.email'
+    // );
+    // console.log('hasAccess', hasAccess)
+  }
+  
 
   return (
     <>
@@ -301,6 +331,25 @@ function LoginForm() {
             }}
           >
             Sign In
+          </Button>
+          {/* <button>
+            <GoogleLogin
+              onSuccess={credentialResponse => {
+                console.log(jwt_decode(credentialResponse.credential))
+
+              }}
+              onError={() => {
+                console.log('Login Failed');
+              }}
+              scope="email profile https://www.googleapis.com/auth/calendar openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email"
+            />
+          </button> */}
+          <Button
+            onClick={(e) => {
+              googleLogin(e);
+            }}
+          >
+            Google
           </Button>
         </Form>
 

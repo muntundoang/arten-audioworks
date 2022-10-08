@@ -9,8 +9,8 @@ function Themain() {
   const navigate = useNavigate();
 
   return (
-    <div className="h-[calc(100vh-64px)] w-screen bg-primary flex justify-center">
-      <div className="h-[calc(100vh-64px)] lg:w-[1000px] sm:w-[700px] w-[400px] flex flex-col items-center justify-center">
+    <div className="h-[calc(100vh-120px)] w-screen bg-primary flex justify-center">
+      <div className="h-[calc(100vh-120px)] lg:w-[1000px] sm:w-[700px] w-[400px] flex flex-col items-center justify-center">
         <div className="flex justify-center items-center lg:mt-0 mt-10 ">
           <div className="sm:inline hidden font-title  lg:w-[200px] md:w-[150px] ">
             <div
