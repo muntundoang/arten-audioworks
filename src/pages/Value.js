@@ -7,8 +7,8 @@ function Value() {
   const navigate = useNavigate();
 
   return (
-    <div className="sm:h-[calc(120vh-64px)] h-[calc(200vh-64px)] w-screen bg-primary flex justify-center items-center">
-      <div className="sm:h-[calc(120vh-64px)] h-[calc(200vh-64px)] lg:w-[1000px] sm:w-[700px] w-[400px] flex flex-col items-center">
+    <div className="h-screen w-screen bg-primary flex justify-center items-center">
+      <div className="h-screen pt-[72px] lg:w-[1000px] sm:w-[700px] w-[400px] flex flex-col items-center">
         <div className="flex justify-center items-start md:w-full sm:w-[500px] w-[300px] space-x-20  mb-8 lg:mt-0 mt-6">
           <div className="flex justify-center items-center space-x-20 ">
             <div

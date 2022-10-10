@@ -1,4 +1,3 @@
 module.exports = {
-    userLogin: require('./user/login'),
-    oAuthLogin: require('./user/googleLogin')
+    userLogin: require('./user/login')
 }

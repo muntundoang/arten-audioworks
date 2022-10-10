@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import googleButton from "../img/btn_google.png";
-import { useGoogleLogin, hasGrantedAllScopesGoogle } from "@react-oauth/google";
-const { userLogin, oAuthLogin } = require("../axios/index");
+import { useNavigate } from "react-router-dom";
+import { useGoogleLogin, hasGrantedAllScopesGoogle, hasGrantedAnyScopeGoogle } from "@react-oauth/google";
+const { userLogin } = require("../axios/index");
 
 function Login2Form() {
-  const [click, setClick] = useState(false);
+  const navigate = useNavigate();
   const [password, setPassword] = useState();
   const [IsLogin, setIsLogin] = useState(false);
   const [email, setEmail] = useState();
-  const [googleAuth, setGoogleAuth] = useState();
-  const handleClick = () => setClick(!click);
 
   const emailOnChange = (e) => {
     e.preventDefault();
@@ -36,33 +35,41 @@ function Login2Form() {
       console.log(error);
     }
   };
-
+  // --------------- Google Login -----------------------------------
+  const scope = "email profile https://www.googleapis.com/auth/calendar openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email"
   const login = useGoogleLogin({
-    onSuccess: (codeResponse) => setGoogleAuth(codeResponse.code),
+    onSuccess: (codeResponse) => getToken(codeResponse.code),
     onError: () => console.log("error"),
     flow: "auth-code",
-    scope:
-      "email profile https://www.googleapis.com/auth/calendar openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email",
+    scope: scope,
   });
 
-  const googleLogin = (e) => {
-    e.preventDefault();
+  const googleLogin = async (e) => {
     console.log("masuk google login");
-    login();
-    console.log("userinfo", googleAuth);
-    const token = oAuthLogin(googleAuth);
-    console.log("token", token.data);
-    // const hasAccess = hasGrantedAllScopesGoogle(
-    //   googleAuth,
-    //   'email',
-    //   'profile',
-    //   'https://www.googleapis.com/auth/calendar',
-    //   'openid',
-    //   'https://www.googleapis.com/auth/userinfo.profile',
-    //   'https://www.googleapis.com/auth/userinfo.email'
-    // );
-    // console.log('hasAccess', hasAccess)
+    try {
+      e.preventDefault();
+      login()
+    } catch (error) {
+      console.log(error)
+    }
   };
+
+  const getToken = async (code) => {
+    let payload
+    try {
+      payload = await userLogin('googleSign', code);
+      const access_token = payload.data.access_token;
+      if (access_token) {
+        localStorage.setItem("access_token", access_token);
+        navigate("/")
+      } else {
+        console.log("gagal login");
+      }
+    } catch (e) {
+      console.log(e)
+    }
+  }
+  // --------------- End Google Login -----------------------------------
 
   return (
     <div className="w-full h-screen flex justify-center items-center">
@@ -75,14 +82,14 @@ function Login2Form() {
           <input
             type="email"
             onChange={(e) => emailOnChange(e)}
-            className="rounded-2xl px-2 py-1 w-full md:w-full border-[1px] border-blue-400 m-1 focus:shadow-md
+            className="rounded-2xl px-2 py-1 w-full text-black md:w-full border-[1px] border-blue-400 m-1 focus:shadow-md
             focus:border-pink-400 focus:outline-none focus:ring-0"
             placeholder="Email"
           ></input>
           <input
             type="password"
             onChange={(e) => passOnChange(e)}
-            className="rounded-2xl px-2 py-1 w-full md:w-full border-[1px] border-blue-400 m-1 focus:shadow-md
+            className="rounded-2xl px-2 py-1 w-full text-black md:w-full border-[1px] border-blue-400 m-1 focus:shadow-md
             focus:border-pink-400 focus:outline-none focus:ring-0"
             placeholder="Password"
           ></input>
@@ -96,6 +103,7 @@ function Login2Form() {
             className="hover:cursor-pointer"
             alt="google sign"
             src={googleButton}
+            onClick={(e) => { googleLogin(e) }}
           ></img>
         </div>
 

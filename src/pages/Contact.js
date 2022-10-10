@@ -8,8 +8,8 @@ function Contact() {
   const navigate = useNavigate();
 
   return (
-    <div className="sm:h-[calc(100vh-64px)] h-[calc(100vh-64px)] w-screen bg-white flex justify-center items-center">
-      <div className="sm:h-[calc(100vh-64px)] h-[calc(100vh-64px)] lg:w-[1000px] sm:w-[700px] w-[400px] flex flex-col items-center justify-center sm:space-y-0 space-y-10">
+    <div className="h-screen sm:h-[calc(100vh-64px)] w-screen bg-white flex justify-center items-center">
+      <div className="h-screen pt-[72px] sm:h-[calc(100vh-64px)] lg:w-[1000px] sm:w-[700px] w-[400px] flex flex-col items-center justify-center sm:space-y-0 space-y-10">
         <div className="flex sm:flex-row flex-col sm:justify-center sm:items-start justify-start items-center sm:mt-20 mt-10">
           <div className="font-title  sm:inline hidden  lg:w-[200px] md:w-[150px] ">
             <div

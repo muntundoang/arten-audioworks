@@ -1,11 +1,13 @@
 const axios = require('axios') 
 
-module.exports = async function (email, password){
+module.exports = async function (type, code, email, password){
     try {
         return await axios({
             method: 'post',
-            url: `${process.env.baseUrl}/user/login`,
+            url: `http://localhost:3001/user/login`,
             data: {
+                type: type,
+                code: code,
                 email: email,
                 password: password
             }

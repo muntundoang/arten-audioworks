@@ -7,8 +7,8 @@ function Aboutus() {
   const navigate = useNavigate();
 
   return (
-    <div className="h-[calc(100vh-64px)] w-screen bg-primary flex justify-center items-center">
-      <div className="h-[calc(100vh-64px)] lg:w-[1000px] sm:w-[700px] w-[400px] flex flex-col items-center">
+    <div className="h-screen w-screen bg-primary flex justify-center items-center">
+      <div className="h-screen py-[80px] lg:w-[1000px] sm:w-[700px] w-[400px] flex flex-col items-center">
         <div className="flex justify-center items-start md:w-full sm:w-[500px] w-[300px] md:space-x-20 sm:space-x-3 mb-8 lg:mt-0 mt-6">
           <div className="flex justify-center items-center sm:space-x-20 space-x-10 ">
             <div

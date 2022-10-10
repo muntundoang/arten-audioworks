@@ -7,8 +7,8 @@ function Rentals() {
   const navigate = useNavigate();
 
   return (
-    <div className="h-[calc(100vh-120px)] w-screen bg-primary flex justify-center items-center">
-      <div className="h-[calc(100vh-120px)] lg:w-[1000px] sm:w-[700px] w-[300px] flex flex-col item-center justify-start ">
+    <div className="h-screen w-screen bg-primary flex justify-center items-center">
+      <div className="h-screen py-[72px] lg:w-[1000px] sm:w-[700px] w-[300px] flex flex-col item-center justify-start ">
         <div className="flex justify-center items-center sm:w-full w-[300px]  md:space-x-20 space-x-8 mb-8 lg:mt-0 mt-6">
           <div
             onClick={() => navigate("/")}
