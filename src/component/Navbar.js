@@ -1,15 +1,14 @@
 import React, { useState } from "react";
+import { SiteData } from "./wrapper";
 import { Transition } from "@headlessui/react";
-import { GiHamburgerMenu, GiCancel } from "react-icons/gi";
 import { useNavigate } from "react-router-dom";
-import HamburgerMenu from "./HamburgerMenu";
 import artenLogo from "../img/ARTEN-LOGO-V2-1W.png";
-import arrowDown from "../img/down-arrow.svg";
+import logoutPNG from "../img/logout.png"
 
 function Navbar() {
   const navigate = useNavigate();
+  const { userInfo, isLogin, setLogout } = SiteData()
   const [isOpen, setIsOpen] = useState(false);
-  const [isLogin, setIsLogin] = useState(false);
 
   const handleThemain = (e) => {
     e.preventDefault()
@@ -78,7 +77,7 @@ function Navbar() {
             <div className="flex w-full items-center justify-between">
               <div className="flex">
                 <img
-                  onClick={(e) => {handleThemain(e)}}
+                  onClick={(e) => { handleThemain(e) }}
                   className="h-8 w-8"
                   src={artenLogo}
                   alt="Workflow"
@@ -86,30 +85,41 @@ function Navbar() {
               </div>
               {isLogin ? (
                 <div className="hidden md:block">
-                  <div className="ml-10 flex items-baseline space-x-4">
+                  <div className="flex items-center justify-center">
                     <p
-                      className=" cursor-pointer hover:bg-gray-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                      className="text-white px-3 py-2 rounded-md self-center text-sm font-medium"
                     >
-                      Hello Art Friends!
+                      Hi, {userInfo.fullName}!
                     </p>
+                    <div className="w-[35px] h-[35px] rounded-full overflow-hidden mr-[10px]">
+                      <img src={userInfo.profileImage} alt="profile" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="flex text-white 
+                    cursor-pointer hover:bg-gray-700 rounded-xl transition-colors p-[10px] items-center duration-300
+                    font-semibold" onClick={(e) => {setLogout(e)}}>
+
+                      <div className="w-[35px] h-[35px] rounded-full overflow-hidden mr-[10px]">
+                        <img src={logoutPNG} alt="logout sign" className="w-full h-full object-cover" />
+                      </div>
+                      Log Out
+                    </div>
                   </div>
                 </div>
               ) : (
                 <div className="flex invisible justify-center items-center space-x-5 md:visible">
                   {/* <!-- Login --> */}
                   <p className="text-white cursor-default text-lg"> Hi, Art Friend!</p>
-                  <a className="flex text-white 
+                  <div className="flex text-white 
                     cursor-pointer hover:bg-gray-700 rounded-xl transition-colors p-[10px] duration-300
-                    font-semibold">
+                    font-semibold" onClick={(e) => {handleLoginForm(e)}}>
 
                     <svg className="fill-current h-5 w-5 mr-2 mt-0.5" version="1.1" width="24" height="24"
                       viewBox="0 0 24 24">
                       <path
                         d="M10,17V14H3V10H10V7L15,12L10,17M10,2H19A2,2 0 0,1 21,4V20A2,2 0 0,1 19,22H10A2,2 0 0,1 8,20V18H10V20H19V4H10V6H8V4A2,2 0 0,1 10,2Z" />
                     </svg>
-
                     Login
-                  </a>
+                  </div>
                 </div>
               )}
             </div>
@@ -118,7 +128,7 @@ function Navbar() {
                 <p
                   className="text-right text-clip overflow-hidden text-white rounded-md text-xs font-medium"
                 >
-                  Hi, Art Friends!
+                  Hi, {userInfo.fullName}!
                 </p>
               </div>
               <button
@@ -148,7 +158,7 @@ function Navbar() {
                     </svg>
                   ) : (
                     <div class="w-[35px] h-[35px] rounded-full overflow-hidden border-2 dark:border-white border-gray-900">
-                      <img src="https://images.unsplash.com/photo-1610397095767-84a5b4736cbd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" className="w-full h-full object-cover" />
+                      <img src={userInfo.profileImage} alt="" className="w-full h-full object-cover" />
                     </div>
                   )
                 ) : (

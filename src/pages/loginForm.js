@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import googleButton from "../img/btn_google.png";
 import { useNavigate } from "react-router-dom";
-import { useGoogleLogin, hasGrantedAllScopesGoogle, hasGrantedAnyScopeGoogle } from "@react-oauth/google";
+import { useGoogleLogin } from "@react-oauth/google";
+import { SiteData } from "../component/wrapper";
 const { userLogin } = require("../axios/index");
 
 function Login2Form() {
   const navigate = useNavigate();
+  const { setLogin, userProfile } = SiteData()
   const [password, setPassword] = useState();
-  const [IsLogin, setIsLogin] = useState(false);
   const [email, setEmail] = useState();
+
 
   const emailOnChange = (e) => {
     e.preventDefault();
@@ -27,6 +29,7 @@ function Login2Form() {
       const access_token = response.data.access_token;
       if (access_token) {
         localStorage.setItem("access_token", access_token);
+        setLogin(e, access_token)
         console.log("sukses login");
       } else {
         console.log("gagal login");
@@ -45,7 +48,6 @@ function Login2Form() {
   });
 
   const googleLogin = async (e) => {
-    console.log("masuk google login");
     try {
       e.preventDefault();
       login()
@@ -61,6 +63,7 @@ function Login2Form() {
       const access_token = payload.data.access_token;
       if (access_token) {
         localStorage.setItem("access_token", access_token);
+        userProfile(access_token)
         navigate("/")
       } else {
         console.log("gagal login");
@@ -93,7 +96,7 @@ function Login2Form() {
             focus:border-pink-400 focus:outline-none focus:ring-0"
             placeholder="Password"
           ></input>
-          <button className="rounded-2xl m-2 text-white bg-blue-500 w-2/5 px-4 py-2 shadow-md hover:text-blue-400 hover:bg-white transitioon duration-200 ease-in">
+          <button className="rounded-2xl m-2 text-white bg-blue-500 w-2/5 px-4 py-2 shadow-md hover:text-blue-400 hover:bg-white transitioon duration-200 ease-in" onClick={(e) => { loginButtonHandler(e) }}>
             Sign In
           </button>
         </div>
@@ -111,7 +114,6 @@ function Login2Form() {
         <div className="inline-block border-[1px] justify-center w-20 border-blue"></div>
         <p
           className="text-white mt-4 mb-4 text-sm"
-          onClick={(e) => setIsLogin(false)}
         >
           Don't have an account?
         </p>

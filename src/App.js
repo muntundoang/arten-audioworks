@@ -1,7 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import { useEffect } from "react";
 import Navbar from "./component/Navbar";
 import Themain from "./pages/Themain";
 import Rentals from "./pages/Rentals";
