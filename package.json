@@ -1,5 +1,6 @@
 {
   "name": "artens-web",
+  "homepage": "https://artenstudio.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
