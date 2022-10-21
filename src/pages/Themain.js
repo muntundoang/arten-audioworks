@@ -9,10 +9,10 @@ function Themain() {
   const navigate = useNavigate();
 
   return (
-    <div className="h-[calc(100vh-64px)] w-screen bg-primary flex justify-center">
-      <div className="h-[calc(100vh-64px)] lg:w-[1000px] sm:w-[700px] w-[400px] flex flex-col items-center justify-center">
+    <div className="min-h-screen max-h-[100%] w-screen bg-primary flex justify-center">
+      <div className="min-h-screen max-h-[100%] pt-[80px] lg:w-[1000px] sm:w-[700px] w-[400px] flex flex-col items-center justify-center">
         <div className="flex justify-center items-center lg:mt-0 mt-10 ">
-          <div className="sm:inline hidden font-title  lg:w-[200px] md:w-[150px] ">
+          <div className="sm:inline hidden font-title lg:w-[200px] md:w-[150px] ">
             <div
               onClick={() => navigate("/")}
               className="hover:my-5 my-3 hover:w-4 hover:h-4 hover:rounded-full hover:bg-button hover:cursor-pointer hover:flex hover:items-center hover:ml-[-24px] "
@@ -26,7 +26,7 @@ function Themain() {
               className="hover:my-5 my-3 hover:w-4 hover:h-4 hover:rounded-full hover:bg-button hover:cursor-pointer hover:flex hover:items-center hover:ml-[-24px] "
             >
               <p className="hover:absolute hover:ml-6 font-bold text-2xl style">
-                Rentals
+                Rental Prices
               </p>
             </div>
             <div
@@ -66,8 +66,8 @@ function Themain() {
             <img className="" src={Mic} alt="" />
           </div>
           <div className="w-[300px] lg:ml-28 md:ml-10 flex flex-col justify-center items-center">
-            <p className="font-title text-white text-6xl font-bold relative tracking-widest">
-              Recording Studio in Arten{" "}
+            <p className="font-title text-white text-6xl font-bold tracking-widest">
+              Recording Studio in Arten
               
             </p>`
             <button

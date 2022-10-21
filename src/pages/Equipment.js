@@ -15,8 +15,8 @@ function Equipment() {
   const navigate = useNavigate();
 
   return (
-    <div className="h-[calc(300vh-64px)] w-screen bg-white flex justify-center items-center">
-      <div className="h-[calc(300vh-64px)] lg:w-[1000px] sm:w-[700px] w-[400px]  flex flex-col">
+    <div className="min-h-screen max-h-[100%] w-screen bg-white flex justify-center items-center">
+      <div className="min-h-screen max-h-[100%] pt-[72px] lg:w-[1000px] sm:w-[700px] w-[400px]  flex flex-col">
         <div className="flex justify-center items-start w-full mb-10 mt-6">
           <div className="flex justify-center items-start space-x-5 ">
             <div
