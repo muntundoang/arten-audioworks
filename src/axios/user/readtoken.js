@@ -1,6 +1,6 @@
-const axios = require('axios') 
+import axios from 'axios' 
 
-module.exports = async function (payload){
+export default async function (payload){
     try {
         return await axios({
             method: 'post',
